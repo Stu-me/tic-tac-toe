@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Licorice&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+NZ:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Distressed&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    font-size: 30px;
+    height: 50px;
+    padding: 5px 5px;
+    background-color: #212121;
+    color: white;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin :0;
+    list-style: none;
+}
+nav ul li{
+    margin: 0px 20px;
+}
+.gameContainer{
+    /* background-color: #e48383; */
+    display: flex;
+    justify-content: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,10vw);
+    grid-template-rows: repeat(3,10vw);
+    /* background-color: rgb(48, 48, 47); */
+    /* color: aliceblue; */
+    font-family: "Noto Sans", sans-serif;
+    justify-content: center;
+}
+.box{
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    border: 0.18vw solid rgb(122, 216, 34) ;
+    font-size: 8vw;
+    cursor: pointer;
+}
+.box:hover{
+    background-color: #dad85f70;
+}
+.gameInfo{
+    font-size: 3vw;
+      font-family: "Rubik Distressed", system-ui;
+    text-align: center;
+}
+.imgBox{
+    display: none;
+}
+/* utility classes they are a like plug in feature just add then in the class the function will work cool asf */
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
