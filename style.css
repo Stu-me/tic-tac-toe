@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;
 }
+body{
+    background-color: #ebb6b6a6;
+}
 
 nav{
     font-size: 30px;
@@ -26,6 +29,7 @@ nav ul li{
     /* background-color: #e48383; */
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .container{
     display: grid;
@@ -48,12 +52,16 @@ nav ul li{
     background-color: #dad85f70;
 }
 .gameInfo{
-    font-size: 3vw;
-      font-family: "Rubik Distressed", system-ui;
+    font-size: 2vw;
+    font-family: "Rubik Distressed", system-ui;
     text-align: center;
 }
-.imgBox{
-    display: none;
+.gameInfo h1{
+    color: rgba(54, 19, 19, 0.775);
+}
+.imgBox img{
+    width: 0;
+    transition: width 1s ease-in-out;
 }
 /* utility classes they are a like plug in feature just add then in the class the function will work cool asf */
 .br-0{
@@ -67,4 +75,26 @@ nav ul li{
 }
 .bb-0{
     border-bottom: 0;
+}
+#reset{
+    border: 2px solid  rgba(0, 0, 0, 0.416);
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-family: cursive;
+    font-weight: 800;
+    color: rgb(46, 71, 21);
+    background-color: #f8afaf;
+    font-size: large;
+    cursor: pointer;
+}
+#switch{
+    border: 2px solid  rgba(0, 0, 0, 0.416);
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-family: cursive;
+    font-weight: 800;
+    color: rgb(46, 71, 21);
+    background-color: #f8afaf;
+    font-size: large;
+    cursor: pointer;
 }
