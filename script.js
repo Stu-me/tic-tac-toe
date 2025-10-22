@@ -13,7 +13,21 @@ const changeTurn = () => {
   if (turn === "X") return (turn = "O");
   return (turn = "X");
 };
-let gameOver = false;
+let gameOver = false; // earlier made the mistake not to make it global
+
+const checkDraw = ()=>{
+  let boxtext = document.querySelectorAll('.boxtext');
+  let allFilled = true;
+  boxtext.forEach(box =>{
+    if(box.innerHTML === '') allFilled  = false; // empty
+  })
+  if(allFilled === true && gameOver === false){
+     document.querySelector(".info").innerHTML = `Game is tied. No one managed to win.`;
+     afterLossAudio.play();
+     document.querySelector('#lose').style.width = "200px";
+  }
+}
+
 const checkWin = () => {
   let boxtext = document.querySelectorAll(".boxtext");
   const win = [
@@ -32,15 +46,13 @@ const checkWin = () => {
       boxtext[e[1]].innerHTML === boxtext[e[2]].innerHTML &&
       boxtext[e[1]].innerHTML != ""
     ) {
-      document.querySelector(
-        ".info"
-      ).innerHTML = `GAME OVER.... ${turn} won the game`;
-      document.querySelector("#imgWin").style.width = "200px";
       gameOver = true;
+      document.querySelector(".info").innerHTML = `GAME OVER.... ${turn} won the game`;
+      document.querySelector("#imgWin").style.width = "200px";
+      
     }
   });
-  if (gameOver === true) {
-  }
+      if(!gameOver)checkDraw();
 };
 
 //game logic
@@ -55,6 +67,7 @@ Array.from(boxes).forEach((element) => {
       changeTurn(turn);
       onSelectionAudio.play();
     }
+    console.log(gameOver);
     if (!gameOver)
       document.querySelector(".info").innerHTML = `Turn for ${turn}`;
   });
@@ -62,21 +75,22 @@ Array.from(boxes).forEach((element) => {
 
   reset.addEventListener("click", () => {
     let boxtexts = document.querySelectorAll(".boxtext");
+    gameOver = false;
     Array.from(boxtexts).forEach((element) => {
       element.innerHTML = "";
       turn = "X";
       document.querySelector(".info").innerHTML = `Turn for ${turn}`;
       document.querySelector("#imgWin").style.width = "0px";
+      document.querySelector("#lose").style.width = "0px";
     });
   });
 
 switchSymbol.addEventListener("click", () => {
   changeTurn();
+  gameOver = false;
   let boxtexts = document.querySelectorAll(".boxtext");
     Array.from(boxtexts).forEach((element) => {
       element.innerHTML = "";
-      document.querySelector(".info").innerHTML = `Turn for ${turn}`;
     });
-
   document.querySelector(".info").innerHTML = ` Turn for ${turn}`;
 });

@@ -61,6 +61,9 @@ nav ul li{
     margin-top: 10px;
     color: rgba(54, 19, 19, 0.775);
 }
+.info{
+    transition: 0.5s , ease-in;
+}
 .imgBox img{
     width: 0;
     transition: width 1s ease-in-out;
@@ -117,5 +120,8 @@ nav ul li{
     display: grid;
     grid-template-columns: repeat(3,30vw);
     grid-template-rows: repeat(3,30vw);
+   }
+   .info{
+    font-size: 35px;
    }
  }
